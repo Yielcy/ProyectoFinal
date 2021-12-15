@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container w-50">
+        <form action="">
+            <div class="row justify-content-center border rounded bg-primary mt-4 mb-2">
+                <div class="col-auto"> 
+                    <h1>Crear una cuenta</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <input id="nombre" name="nombre" placeholder="Nombre" type="text" class="form-control">
+                </div>
+                <div class="col-10">
+                    <input id="email" name="email" placeholder="Correo" type="email" class="form-control">
+                </div>
+                <div class="col-10">
+                    <input id="password" name="password" placeholder="Contraseña" type="password" class="form-control">
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-auto">
+                <button id="registrar" name="registrar" type="button" class="btn btn-info">Registrarse</button>
+                <button type="button" id="regresar" name="regresar" onclick="inicio()" class="btn btn-info">Cancelar</button>
+                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                <script src="usuarios.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
