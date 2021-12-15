@@ -4,31 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crea examen</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
-    <link rel="stylesheet" href="estilos.css">
-
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Inicio</title>
 </head>
-<body>
-<!-----------------------------------Crear preguntas en una lista----------------------------------------->
-    <div class="container w-50">
-        <div class="row justify-content-center border rounded bg-primary mt-4 mb-2">
-            <div class="col-auto"> 
-                <h1>¿Qué quieres hacer?</h1>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-auto">
-                <button id="crear" name="crear" type="button" onclick="crear()" class="btn btn-info">Crear un formulario</button> 
-
-                <button id="resolver" name="resolver" type="button" onclick="resolver()" class="btn btn-info">Resolver un formulario</button>
+<body bgcolor="#3182ce">
+    <p class="font-serif text-lg text-white text-center text-5xl mt-4">
+        ¡Bienvenido al sistema de preguntas y respuestas!
+    </p>
+    <div class="m-8 mt-2">
+        <div class="w-3/6 rounded overflow-hidden m-auto mt-8 shadow-2xl" style="background-color:#ffff">
+            <center><img class="max-w-xs my-4" src="Uv.png"></center> 
+            <div class="px-6 py-4">
+                <center><div class="font-bold text-xl mb-2">Elige la opción que desees llevar acabo</div></center> 
             </div>
 
+            <div class="p-4">
+                <div class="flex mb-4">
+                    <div class="m-auto w-1/4 h-auto p-2 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-4 border-b-4 border-green-600 hover:border-green-600 rounded">
+                        <center>
+                            <a class="" href="http://localhost:4567/pregunta.html">
+                                Crear 
+                            </a> 
+                        </center> 
+                    </div>
+                    <div class="m-auto w-1/4 h-auto p-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-4 border-b-4 border-blue-700 hover:border-blue-700 rounded">
+                        <center>
+                            <a class="">
+                                Responder
+                            </a> 
+                        </center> 
+                    </div>
+                </div>
+            </div>  
         </div>
-
     </div>
     
 
