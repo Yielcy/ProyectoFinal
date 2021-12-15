@@ -2,7 +2,7 @@ package mx.uv;
 
 import static spark.Spark.*;
 
-import mx.uv.bd.*;
+import mx.uv.BD.*;
 
 import com.google.gson.*;
 import java.util.Map;
@@ -16,7 +16,7 @@ public class App
     private static Map<String, Usuario> usuarios = new HashMap<>();
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println( "Proyecto Final de Sistemas Web" );
 
         staticFiles.location("/");
         port(getHerokuAssignedPort());
@@ -40,19 +40,15 @@ public class App
         before((req, res) -> res.header("Access-Control-Allow-Origin", "*"));
 
         get("/", (req, res) -> {
-            res.redirect("Inicio.html");
+            res.redirect("inicio.html");
             return null;
         });
         
 
-        get("/preguntas", (req, res) -> {
-            before((rq, rs) -> rs.type("application/json"));
-            DAO dao = new DAO();
-            return gson.toJson(dao.lisPreguntas());
-        });
 
+        //********************* METODOS DE LOS USUARIOS **********************
 
-
+        //Meter usuario a la BD
         post("/usuario", (req, res) -> {
             String payload = req.body();
             String id = UUID.randomUUID().toString();
@@ -60,48 +56,64 @@ public class App
             u.setId(id);
             // usuarios.put(id, u);
 
-            DAO dao = new DAO();
+            Operaciones dao = new Operaciones();
             JsonObject objetoJson = new JsonObject();
             objetoJson.addProperty("status", dao.crearUsuario(u));
             objetoJson.addProperty("id", id);
             return objetoJson;
         });
-        /**Iniciar sesión***************************************************** */
+
+
+        //Buscar usuario en la BD
         post("/usuarioB", (req, res) -> {
             String payload = req.body();
             Usuario u = gson.fromJson(payload, Usuario.class);
             String email = u.getEmail();
             String password = u.getPassword();
 
-            DAO dao = new DAO();
+            Operaciones dao = new Operaciones();
             JsonObject objetoJson = new JsonObject();
             dao.buscarUsuario(email, password);
             return objetoJson;
         });
-
-
-        /**Preguntas------------------------------------------------------ */
         
+        
+        
+        //********************* METODOS DE LAS PREGUNTAS **********************
+        //Buscar las preguntas en la BD
+        get("/preguntas", (req, res) -> {
+            before((rq, rs) -> rs.type("application/json"));
+            Operaciones dao = new Operaciones();
+            return gson.toJson(dao.lisPreguntas());
+        });
+
+        //Ingresar pregunta en la BD        
         post("/pregunta", (req, res) -> {
             String payload = req.body();
             String id = UUID.randomUUID().toString();
             Pregunta p = gson.fromJson(payload, Pregunta.class);
             p.setID(id);
 
-            DAO dao = new DAO();
+            Operaciones dao = new Operaciones();
             JsonObject objetoJson = new JsonObject();
             objetoJson.addProperty("status", dao.crearPregunta(p));
             objetoJson.addProperty("id", id);
             return objetoJson;
         });
 
+
+
+
+
+        //********************* METODOS DE LAS RESPUESTAS **********************
+        //METER una respuesta a la BD
         post("/respuesta", (req, res) -> {
             String payload = req.body();
             String id = UUID.randomUUID().toString();
             Respuesta r = gson.fromJson(payload, Respuesta.class);
             r.setId(id);
             
-            DAO dao = new DAO();
+            Operaciones dao = new Operaciones();
             JsonObject objetoJson = new JsonObject();
             objetoJson.addProperty("status", dao.crearRespuesta(r));
             objetoJson.addProperty("id", id);

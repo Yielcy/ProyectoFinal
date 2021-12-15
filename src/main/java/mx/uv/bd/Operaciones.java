@@ -1,4 +1,5 @@
-package mx.uv.bd;
+package mx.uv.BD;
+
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -10,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAO {
+public class Operaciones {
 
     private Conexion conexion = new Conexion();
     Connection con;
@@ -75,7 +76,7 @@ public class DAO {
                         if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
                             try{
                                 
-                                java.net.URI uri = new java.net.URI("https://finalproyectofreddy.herokuapp.com/escoger.html");
+                                java.net.URI uri = new java.net.URI("http://127.0.0.1:5500/ProyectoFinal/src/main/resources/formulario.htmll");
                                 desktop.browse(uri);
                             } catch (URISyntaxException | IOException ex) {}
                         }

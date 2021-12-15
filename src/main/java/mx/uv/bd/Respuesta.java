@@ -1,4 +1,4 @@
-package mx.uv.bd;
+package mx.uv.BD;
 
 public class Respuesta {
 
