@@ -11,7 +11,7 @@ grabar.addEventListener('click', GRABAR)
 parar.addEventListener('click', PARAR)
 
 iniciar.addEventListener("click", function(){    
-    //Abrir la camara
+    //Aqui es donde se manda abrir la camará
     navigator.mediaDevices.getUserMedia({
         audio: false,
         video: true
@@ -92,7 +92,6 @@ function preguntas(u) {
         responder.type = "text";
 
         listPreguntas.appendChild(pregunta);
-        //listPreguntas.appendChild(responder);
     }
 };
 
