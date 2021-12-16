@@ -201,11 +201,10 @@ public class Operaciones {
 
         con = conexion.getConnection();
         try {
-            String sql = "INSERT INTO respuestas (id, respuesta, valor, idpregunta) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO respuestas (id, respuesta, idpregunta) VALUES (?, ?, ?, ?)";
             stm = con.prepareStatement(sql);
             stm.setString(1, r.getId());
             stm.setString(2, r.getRespuesta());
-            stm.setInt(3, r.getValor());
             stm.setString(4, r.getIDpregunta());
 
             if (stm.executeUpdate() > 0)
