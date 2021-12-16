@@ -92,7 +92,7 @@ function preguntas(u) {
         responder.type = "text";
 
         listPreguntas.appendChild(pregunta);
-        listPreguntas.appendChild(responder);
+        //listPreguntas.appendChild(responder);
     }
-}
+};
 
