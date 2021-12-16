@@ -6,8 +6,6 @@ btnRegistrar.addEventListener("click", function () {
     }).then(function(){
         
     })
-
-
 })
 
 
