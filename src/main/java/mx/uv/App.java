@@ -5,15 +5,15 @@ import static spark.Spark.*;
 import mx.uv.BD.*;
 
 import com.google.gson.*;
-import java.util.Map;
+//import java.util.Map;
 import java.util.UUID;
-import java.util.HashMap;
+//import java.util.HashMap;
 public class App 
 {
    
 
     private static Gson gson = new Gson();
-    private static Map<String, Usuario> usuarios = new HashMap<>();
+    //private static Map<String, Usuario> usuarios = new HashMap<>();
     public static void main( String[] args )
     {
         System.out.println( "Proyecto Final de Sistemas Web" );
