@@ -45,7 +45,7 @@ function agregar() {
         respuesta : document.getElementById("respuesta").value,
         valor : valor,
         idpregunta : idpregunta
-
+        })
         .then(function (response) {
             alert("mensaje: pregunta creada "+response.data.status+" con id: "+response.data.id);
             id = response.data.id;
