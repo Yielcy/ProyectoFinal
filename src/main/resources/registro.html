@@ -4,38 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrarse</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Registro</title>
 </head>
 <body>
-    <div class="container w-50">
-        <form action="">
-            <div class="row justify-content-center border rounded bg-primary mt-4 mb-2">
-                <div class="col-auto"> 
-                    <h1>Crear una cuenta</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10">
-                    <input id="nombre" name="nombre" placeholder="Nombre" type="text" class="form-control">
-                </div>
-                <div class="col-10">
-                    <input id="email" name="email" placeholder="Correo" type="email" class="form-control">
-                </div>
-                <div class="col-10">
-                    <input id="password" name="password" placeholder="Contraseña" type="password" class="form-control">
-                </div>
-            </div>
-        </form>
-        <div class="row">
-            <div class="col-auto">
-                <button id="registrar" name="registrar" type="button" class="btn btn-info">Registrarse</button>
-                <button type="button" id="regresar" name="regresar" onclick="inicio()" class="btn btn-info">Cancelar</button>
-                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-                <script src="registro.js"></script>
-            </div>
+  <header class="ml-auto w-1/6 mt-4">
+    <a href="login.html" class="text-blue-500"><b><u>Pantalla de inicio de sesión</u></b></a>
+  </header>
+  
+  <form action="http://localhost:4567/usuario" method="post">
+    
+      <div class="m-auto">
+        <!--Registro-->
+        <div class="w-full">
+          <!--Imagen-->
+          <div class="w-full my-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="currentColor" class="bi bi-person-plus m-auto text-green-600" viewBox="0 0 16 16">
+              <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+              <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+          </div>
+          <!--Texto-->
+          <div class="w-full m-auto text-center mb-8">
+            <h2 class="text-4xl font-bold">Registro</h2>
+          </div>
         </div>
-    </div>
+      <form class="w-full m-auto">
+          <div class="md:flex md:items-center mb-6 m-auto">
+            <div class="md:w-1/3">
+              <label class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                ¿Cual es tu email?
+              </label>
+            </div>
+            <div class="md:w-1/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="email" type="text">
+            </div>
+          </div>
+          <div class="md:flex md:items-center mb-6 m-auto">
+            <div class="md:w-1/3">
+              <label class="block text-black-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                ¿Cual es tu contraseña?
+              </label>
+            </div>
+            <div class="md:w-1/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="password" type="password" placeholder="********************">
+            </div>
+          </div>
+          <div class="md:flex md:items-center m-auto">
+            <div class="md:w-1/3 m-auto">
+              <center>
+                <button class="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-4 px-20 rounded m-auto" type="button" id="registrar">
+                  ¡Registrar!
+                </button>
+              </center>
+            </div>
+          </div>
+      </form>
+    
+  </form>  
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="RegistrarU.js"></script>
 </body>
 </html>
