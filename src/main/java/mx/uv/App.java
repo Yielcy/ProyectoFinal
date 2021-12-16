@@ -53,8 +53,7 @@ public class App
             String id = UUID.randomUUID().toString();
             Usuario u = gson.fromJson(payload, Usuario.class);
             u.setId(id);
-            // usuarios.put(id, u);
-
+            
             Operaciones dao = new Operaciones();
             JsonObject objetoJson = new JsonObject();
             objetoJson.addProperty("status", dao.crearUsuario(u));
