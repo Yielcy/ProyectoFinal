@@ -59,7 +59,7 @@ function agregar() {
         resp.textContent = txtRespuesta.value;
         
         //Agrega la respuesta a la base de datos
-        axios.post("http://localhost:4567respuesta", {
+        axios.post("http://localhost:4567/respuesta", {
         respuesta : document.getElementById("respuesta").value,
         valor : valor,
         idpregunta : idpregunta
