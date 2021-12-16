@@ -9,9 +9,3 @@ btnRegistrar.addEventListener("click", function () {
 })
 
 
-
-function usuarios(){
-    window.location.href="usuarios.html";
-}
-
-

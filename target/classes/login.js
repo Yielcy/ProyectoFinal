@@ -6,14 +6,6 @@ btnRegistrar.addEventListener("click", function () {
     }).then(function(){
         
     })
-
-
 })
-
-
-
-function usuarios(){
-    window.location.href="usuarios.html";
-}
 
 

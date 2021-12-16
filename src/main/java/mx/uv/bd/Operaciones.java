@@ -76,7 +76,7 @@ public class Operaciones {
                         if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
                             try{
                                 
-                                java.net.URI uri = new java.net.URI("http://127.0.0.1:5500/ProyectoFinal/src/main/resources/formulario.html");
+                                java.net.URI uri = new java.net.URI("http://127.0.0.1:5500/ProyectoFinal/src/main/resources/inicio.html");
                                 desktop.browse(uri);
                             } catch (URISyntaxException | IOException ex) {}
                         }

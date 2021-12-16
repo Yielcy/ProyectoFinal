@@ -76,8 +76,7 @@ public class App
             dao.buscarUsuario(email, password);
             return objetoJson;
         });
-        
-        
+
         
         //********************* METODOS DE LAS PREGUNTAS **********************
         //Buscar las preguntas en la BD
