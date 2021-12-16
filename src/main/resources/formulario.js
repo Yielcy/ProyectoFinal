@@ -1,68 +1,49 @@
-
 var idpregunta;
 var valor = 0;
-/************************************Crear preguntas********************************************************/
-
-var btnAgregar = document.getElementById("agregar");
-btnAgregar.addEventListener("click", agregar);
+var TmpPath;
 
 var txtTarea = document.getElementById("pregunta");
 var listTareas = document.getElementById("preguntas");
-
 var btnAgregarRespuestas = document.getElementById("agregaRespuesta");
-
 var txtRespuesta = document.getElementById("respuesta");
-
-var TmpPath;
-
-valor = document.getElementById("agregaValor").value;
-
+var btnAgregar = document.getElementById("agregar");
 var video = document.getElementById("video");
 
+btnAgregar.addEventListener("click", agregar);
+valor = document.getElementById("agregaValor").value;
+
 $(document).ready(function() {
-
-    // Escuchamos el evento 'change' del input donde cargamos el archivo
     $(document).on('change', 'input[type=file]', function(e) {
-      // Obtenemos la ruta temporal mediante el evento
-      TmpPath = URL.createObjectURL(e.target.files[0]);
-      // Mostramos la ruta temporal
-      $('span').html(TmpPath);
-      console.log(TmpPath);
-      
-      video.src=TmpPath;
-      
+        TmpPath = URL.createObjectURL(e.target.files[0]);
+        $('span').html(TmpPath);
+        console.log(TmpPath);
+        video.src=TmpPath;      
     });
-  
-  });
+});
 
-function agregar() {
-    let tarea = document.createElement("li");
+function agregar() {    
+    let tarea = document.createElement('li');
+    let btnResp = document.createElement('button');
+    var btnValor = document.getElementById('agregaValor');
+
+    tarea.className = 'my-2 border-2 w-1/2 text-center'
     tarea.textContent = txtTarea.value;
+    btnResp.innerText = 'Agregar respuestas';
+    btnResp.className = 'border-2 w-1/2';
 
-    let botonRespuestas = document.createElement("button");
-
-    botonRespuestas.innerHTML = "Agregar respuestas";
-
-    var botonValor = document.getElementById("agregaValor")
-    var salto = document.createElement("br")
-    
-    listTareas.appendChild(tarea);
-    listTareas.appendChild(botonRespuestas);
-    listTareas.appendChild(salto);
     listTareas.appendChild(video);
+    listTareas.appendChild(tarea);
+    //listTareas.appendChild(btnResp);
 
-/****************************Agrega la respuesta a la lista de opción multiple*******************************/
-
+    //Respuesta de opción multiple
     btnAgregarRespuestas.addEventListener("click", function(){
-        
         let resp = document.createElement("label");
         resp.textContent = txtRespuesta.value;
-        
-        //Agrega la respuesta a la base de datos
+
         axios.post("http://localhost:4567respuesta", {
-        respuesta : document.getElementById("respuesta").value,
-        valor : valor,
-        idpregunta : idpregunta
+            respuesta : document.getElementById("respuesta").value,
+            valor : valor,
+            idpregunta : idpregunta
         })
         .then(function (response) {
             alert("mensaje: pregunta creada "+response.data.status+" con id: "+response.data.id);
@@ -78,14 +59,11 @@ function agregar() {
         listTareas.appendChild(resp);
         listTareas.appendChild(salto);
         resp = null;
-      
         console.log("dentro de función" + resp);
-
         valor = 0;
-
     });
 
-    /************************Abre la ventana emergente para agregar la respuesta*******************************/
+    //Agregar la respuesta
     overlay = document.getElementById('overlay'),
 	popup = document.getElementById('popup'),
 	btnCerrarPopup = document.getElementById('btn-cerrar-popup');
@@ -100,38 +78,22 @@ function agregar() {
         overlay.classList.remove('active');
         popup.classList.remove('active');
     })
-
-
     console.log("dentro de función" + tarea);
-   
 }
 
-/*************************Enviar preguntas a la base de datos************************************************/
-
+//Enviar preguntas a la base de datos
 btnAgregar.addEventListener("click", function(){
-    
-    
     axios.post("http://localhost:4567/pregunta", {
         pregunta : document.getElementById("pregunta").value,
         video : TmpPath 
-
- 
-        
-    })
-    .then(function (response) {
+    }).then(function (response) {
         alert("mensaje: pregunta creada "+response.data.status+" con id: "+response.data.id);
         id = response.data.id;
-        idpregunta = id;
-        
-        estado=response.data.status;
+        idpregunta = id;  
+        estado = response.data.status;
     })
     .catch(function (error) {
         console.log(error);
-
-        
     })
 });
-
 console.log("fuera de función:" + tarea);
-
-
