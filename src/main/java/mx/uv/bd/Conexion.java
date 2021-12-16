@@ -1,4 +1,4 @@
-package mx.uv.BD;
+package mx.uv.bd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

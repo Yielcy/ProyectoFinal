@@ -1,4 +1,4 @@
-package mx.uv.BD;
+package mx.uv.bd;
 
 public class Usuario {
     

@@ -2,7 +2,7 @@ package mx.uv;
 
 import static spark.Spark.*;
 
-import mx.uv.BD.*;
+import mx.uv.bd.*;
 
 import com.google.gson.*;
 import java.util.Map;
