@@ -26,7 +26,7 @@
       <scope>test</scope>
     </dependency>
 
-     <!-- mis dependencias -->
+     <!-- Dependencias del proyecto-->
     <dependency>
       <groupId>com.sparkjava</groupId>
       <artifactId>spark-core</artifactId>
@@ -78,26 +78,6 @@
                     <!-- This tells Maven to include all dependencies -->
                     <descriptorRef>jar-with-dependencies</descriptorRef>
                 </descriptorRefs>
-                <archive>
-                    <manifest>
-                        <mainClass>mx.uv.App</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
-        <plugin>
-            <groupId>com.heroku.sdk</groupId>
-            <artifactId>heroku-maven-plugin</artifactId>
-            <version>3.0.3</version>
-            <configuration>
-                <jdkVersion>1.8</jdkVersion>
-                <!-- Use your own application name -->
-                <appName>finalproyectofreddy</appName> 
-                <processTypes>
-                    <!-- Tell Heroku how to launch your application -->
-                    <!-- You might have to remove the ./ in front   -->
-                    <web>java -jar ./target/proyectofinal-1.0-SNAPSHOT-jar-with-dependencies.jar</web>
-                </processTypes>
             </configuration>
         </plugin>
     </plugins>
