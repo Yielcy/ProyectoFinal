@@ -14,9 +14,3 @@ btnRegistrar.addEventListener("click", function () {
         console.log(error);
     })
 })
-
-
-
-function inicio(){
-    window.location.href="inicio.html";
-}
