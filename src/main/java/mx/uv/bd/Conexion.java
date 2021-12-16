@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-    private String url = "jdbc:mysql://db4free.net:3306/BD_SW";
+    private String url = "jdbc:mysql://db4free.net:3306/basedata_sw";
     private String driverName = "com.mysql.jdbc.Driver";
-    private String user = "ltcroot";
+    private String user = "uvroot";
     private String password = "12345678";
     private Connection con = null;
 
